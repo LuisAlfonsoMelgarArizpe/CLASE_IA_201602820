@@ -1,3 +1,4 @@
+console.log("test")
 document.open();
-document.write("23");
+document.write("1");
 document.close();
