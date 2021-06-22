@@ -1,11 +1,20 @@
-console.log("test")
-document.open();
-var url = new URL(window.location.href);
-var turno = url.searchParams.get("turno");
-var estado = url.searchParams.get("estado");
+const express = require('express')
+const cors = require('cors');
+const port = 3000
 
-document.getElementsByClassName("body")
+const app = express()
 
-//document.write("turno : " + turno + "<br> estado : " + estado);
-document.write("24")
-document.close();
+app.use(cors())
+  
+
+app.get('/', (req, res) => {
+    let {turno,estado} = req.query
+    console.log(turno,estado)
+    res.send('53')
+    // algoritmo
+})
+
+
+app.listen(port, () => {
+    console.log(`Servidor  http://localhost:${port}`)
+})
